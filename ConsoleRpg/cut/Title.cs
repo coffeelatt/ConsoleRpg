@@ -31,6 +31,7 @@ namespace ConsoleRpg.cut
         }
         public override void Result()
         {
+            Game.ChangeScene("room1");
             //타이틀 컷신의 결과처리
         }
     }
