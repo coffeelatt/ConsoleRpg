@@ -20,6 +20,31 @@ namespace ConsoleRpg
             cutDic.Add("room2", new room02());
             cutDic.Add("room3", new room03());
             cutDic.Add("room4", new room04());
+            cutDic.Add("room5", new room05());
+            cutDic.Add("room6", new room06());
+            cutDic.Add("room7", new room07());
+            //cutDic.Add("room8", new room08());
+            //cutDic.Add("room9", new room09());
+            //cutDic.Add("room10", new room10());
+            //cutDic.Add("room11", new room11());
+            //cutDic.Add("room12", new room12());
+            //cutDic.Add("room13", new room13());
+            //cutDic.Add("room14", new room14());
+            //cutDic.Add("room15", new room15());
+            //cutDic.Add("room16", new room16());
+            //cutDic.Add("room17", new room17());
+            //cutDic.Add("room18", new room18());
+            //cutDic.Add("room19", new room19());
+            //cutDic.Add("room20", new room20());
+            //cutDic.Add("room21", new room21());
+            //cutDic.Add("room22", new room22());
+            //cutDic.Add("room23", new room23());
+            //cutDic.Add("room24", new room24());
+            //cutDic.Add("room25", new room25());
+
+
+
+
             player = new Player();
             player.Hp = 100;
             player.Attack = 10;
@@ -102,12 +127,21 @@ namespace ConsoleRpg
         { //게임
             player.Hp = 100;
             player.Attack = 10;
-            player.Speed = 8;
+            player.Speed = 1.8f;
             player.Gold = 500;
             window = cutDic["Title"];
-
-
         }
+        public static void PrintInfo()
+        {
+            Console.WriteLine("┌─────────────────────────────────────────────────────────────┐");
+            Console.WriteLine("│  플레이어                                                   │");
+            Console.WriteLine("│                                                             │");
+            Console.WriteLine("│    HP : {0}\tSpeed : {1}\tAttack : {2}\t Gold : {3}   │", player.Hp, player.Speed,player.Attack,player.Gold);
+            Console.WriteLine("└─────────────────────────────────────────────────────────────┘");
+            Console.WriteLine();
+        }
+
+
     }
 
 }

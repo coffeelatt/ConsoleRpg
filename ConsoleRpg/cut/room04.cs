@@ -38,12 +38,12 @@ namespace ConsoleRpg.cut
                     break;
                 case ConsoleKey.A:
                 case ConsoleKey.LeftArrow:
-                    Game.ChangeScene("room1");
+                    Game.ChangeScene("room3");
                     // Move left
                     break;
                 case ConsoleKey.D:
                 case ConsoleKey.RightArrow:
-                    Game.ChangeScene("room3");
+                    Game.ChangeScene("room5");
                     // Move right
                     break;
                 default:

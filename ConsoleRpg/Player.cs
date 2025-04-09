@@ -14,8 +14,8 @@ namespace ConsoleRpg
         private int attack;
         public int Attack { get { return attack; } set { attack = value; } }
 
-        private int speed;
-        public int Speed { get { return speed; } set { speed = value; } }
+        private float speed;
+        public float Speed { get { return speed; } set { speed = value; } }
 
         private int gold;
         public int Gold { get { return gold; } set { gold = value; } }

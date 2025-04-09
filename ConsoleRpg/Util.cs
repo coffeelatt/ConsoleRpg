@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,5 +41,39 @@ namespace ConsoleRpg
             Thread.Sleep(delay);
             Console.ResetColor();
         }
+
+        
+        public static void Printmap(int x ,int y)
+        {
+            Console.SetCursorPosition(20, 20);
+            char[,] map = new char[,]
+            {
+                {'□','□','□','□','□' },
+                {'□','□','□','□','□' },
+                {'□','□','□','□','□' },
+                {'□','□','□','□','□' },
+                {'□','□','□','□','□' }
+            };
+            for(int i = 0; i < map.GetLength(0); i++)
+            {
+                for (int j = 0; j < map.GetLength(1); j++)
+                {
+                    if (i == x && j == y)
+                    {
+                        Console.Write("■");
+                    }
+                    else
+                    {
+                        Console.Write(map[i, j]);
+                    }
+                }
+                Console.WriteLine("\n");
+            }
+
+
+
+        }
+
+
     }
 }
