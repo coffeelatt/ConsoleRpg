@@ -71,23 +71,27 @@ namespace ConsoleRpg
             Console.WriteLine("↑.Retry?. ↓.Exit.");
             //해당 데스카운트 하나로만은 불가능 하고 각자 데스 적립치를 쌓아줬을때 발동 할수 있게 구현. 만약에 죽음으로 가는 경로에 카운트를 만들고
             // 그 카운트를 사용하여 각자 개체에 맞는 해금조건을 만들어준다.
-            
-            switch (Console.ReadKey(true).Key)
+            bool die2 = false;
+            while (die2 == false)
             {
-                case ConsoleKey.UpArrow:
-                    {
-                        Resetstat();
-                        //체력 /공 장비등등 초기화하기
-                        //base();  베이스 함수를 만들어서 초기값을 지정하여 함수 출력.
-                        
+                switch (Console.ReadKey(true).Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        {
+                            Resetstat();
+                            //체력 /공 장비등등 초기화하기
+                            //base();  베이스 함수를 만들어서 초기값을 지정하여 함수 출력.
+                            die2 = true;
+                            break;
+                        }
+                    case ConsoleKey.DownArrow:
+                        {
+                            gameover = true;
+                            die2 = true;
+                            break;
+                        }
 
-                        break;
-                    }
-                case ConsoleKey.DownArrow:
-                    {
-                        gameover = true;
-                        break;
-                    }
+                }
             }
         }
         public static void End()
