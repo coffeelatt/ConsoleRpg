@@ -1,30 +1,18 @@
-﻿namespace ConsoleRpg.cut
-{
-    public class room01 : Basecut
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace ConsoleRpg.cut
+{
+    class textcut :Basecut
     {
-        private static Player player;
         private ConsoleKey input;
         public override void Render()
         {
-            /*막힌길 (1)
-             * 북 ,남(2)
-             * 북 동 남(3)
-             * 북 서 남(4)
-             * 북 동 서 남(5)
-             * 동 남  (6)
-             * 서 남  (7)
-             * 서 동 남(8)
-             */
-            Util.Print3D(3);
-            Game.PrintInfo();
-            Util.Printmap(4, 0);
-            Console.WriteLine();
-            if (Game.DeathCount >= 0)
-            {
-                Util.Print("You are in room 1.");
-            }
-            Console.WriteLine("Move Press key(→,←,↑,↓)");
+            Console.WriteLine("You are in room 2.");
+            Console.WriteLine("Press any key to continue...");
         }
         public override void Input()
         {
@@ -41,10 +29,7 @@
             {
                 case ConsoleKey.W:
                 case ConsoleKey.UpArrow:
-                    {
-                        Game.ChangeScene("room6");
-                        player.Hp++;
-                    }
+                    Game.ChangeScene("room12");
                     break;
                 case ConsoleKey.S:
                 case ConsoleKey.DownArrow:
@@ -52,15 +37,12 @@
                     break;
                 case ConsoleKey.A:
                 case ConsoleKey.LeftArrow:
-                    Game.Gameover("죽어걍");
+
                     // Move left
                     break;
                 case ConsoleKey.D:
                 case ConsoleKey.RightArrow:
-                    {
-                        Game.ChangeScene("room2");
-                        player.Hp++;
-                    }
+
                     // Move right
                     break;
                 default:
@@ -69,6 +51,7 @@
             }
             //타이틀 컷신의 결과처리
         }
+
 
     }
 }

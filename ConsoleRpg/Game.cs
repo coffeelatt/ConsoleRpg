@@ -9,7 +9,7 @@ namespace ConsoleRpg
 
         private static bool gameover;
         private static Player player;
-
+        public static int DeathCount = 0; //죽은 횟수 카운트   
         public static void Start()
         { //게임의 초기설정
             gameover = false;
@@ -48,7 +48,7 @@ namespace ConsoleRpg
             player = new Player();
             player.Hp = 100;
             player.Attack = 10;
-            player.Speed = 8;
+            player.Speed = 1.8f;
             player.Gold = 500;
 
 
@@ -104,6 +104,7 @@ namespace ConsoleRpg
                     case ConsoleKey.UpArrow:
                         {
                             Resetstat();
+                            DeathCount++;
                             //체력 /공 장비등등 초기화하기
                             //base();  베이스 함수를 만들어서 초기값을 지정하여 함수 출력.
                             die2 = true;
@@ -140,7 +141,7 @@ namespace ConsoleRpg
             Console.WriteLine("└─────────────────────────────────────────────────────────────┘");
             Console.WriteLine();
         }
-
+       
 
     }
 
