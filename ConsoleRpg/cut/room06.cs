@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,17 +23,18 @@ namespace ConsoleRpg.cut
              * 서 동 남(8)
              */
             
-            Util.Print3D(8);
+            Util.Print3D(6);
             Game.PrintInfo();
             if (Game.DeathCount >= 20)
             {
-                Util.Printmap(4, 2);
+                Util.Printmap(3, 0);
             }
             Console.WriteLine();
             if (Game.DeathCount >= 5)
             {
-                Util.Print("You are in room 5.");
+                Util.Print("You are in room 6.");
             }
+            
             Console.WriteLine("Move Press key(→,←,↑,↓)");
         }
         public override void Input()
@@ -50,27 +52,28 @@ namespace ConsoleRpg.cut
             {
                 case ConsoleKey.W:
                 case ConsoleKey.UpArrow:
-                    {
-                        Game.ChangeScene("room10");
-                        Game.HpPlus();
-                    }
+                    
                     break;
                 case ConsoleKey.S:
                 case ConsoleKey.DownArrow:
+                    {
+                        Game.ChangeScene("room1");
+                        Game.HpPlus();
+                    }
                     // Move down
                     break;
                 case ConsoleKey.A:
                 case ConsoleKey.LeftArrow:
-                    {
-                        Game.ChangeScene("room4");
-                        Game.HpPlus();
-                    }
+                    
 
                     // Move left
                     break;
                 case ConsoleKey.D:
                 case ConsoleKey.RightArrow:
-
+                    {
+                        Game.ChangeScene("room4");
+                        Game.HpPlus();
+                    }
                     // Move right
                     break;
                 default:
