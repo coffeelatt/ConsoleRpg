@@ -1,4 +1,5 @@
 ﻿using ConsoleRpg.cut;
+using System.Data;
 
 namespace ConsoleRpg
 {
@@ -8,7 +9,8 @@ namespace ConsoleRpg
         private static Basecut window;
 
         private static bool gameover;
-        private static Player player;
+        public static Player player;
+        
         public static int DeathCount = 0; //죽은 횟수 카운트   
         public static void Start()
         { //게임의 초기설정
@@ -50,7 +52,8 @@ namespace ConsoleRpg
             player.Attack = 10;
             player.Speed = 1.8f;
             player.Gold = 500;
-
+            
+            
 
             window = cutDic["Title"];
         }
@@ -141,8 +144,37 @@ namespace ConsoleRpg
             Console.WriteLine("└─────────────────────────────────────────────────────────────┘");
             Console.WriteLine();
         }
-       
+        
+        public static void HpPlus()
+        {
+            player.Hp++;
+        }
+        public static void HpMinus()
+        {
+            player.Hp--;
+        }
+        public static void AttackPlus()
+        {
+            player.Attack++;
+        }
+        public static void AttackMinus()
+        {
+            player.Attack--;
+        }
+        public static void SpeedPlus()
+        {
+            player.Speed++;
+        }
+        public static void SpeedMinus()
+        {
+            player.Speed--;
+        }
 
+        public static void useshop()
+        {
+            Shop shop = new Shop();
+            shop.useshop();
+        }
     }
 
 }

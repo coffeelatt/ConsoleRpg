@@ -3,7 +3,7 @@
     public class room01 : Basecut
 
     {
-        private static Player player;
+        
         private ConsoleKey input;
         public override void Render()
         {
@@ -18,9 +18,14 @@
              */
             Util.Print3D(3);
             Game.PrintInfo();
-            Util.Printmap(4, 0);
+            if(Game.DeathCount >= 20)
+            {
+                Util.Printmap(4, 0);
+            }
+           
+           
             Console.WriteLine();
-            if (Game.DeathCount >= 0)
+            if (Game.DeathCount >= 5)
             {
                 Util.Print("You are in room 1.");
             }
@@ -43,7 +48,7 @@
                 case ConsoleKey.UpArrow:
                     {
                         Game.ChangeScene("room6");
-                        player.Hp++;
+                        Game.HpPlus();
                     }
                     break;
                 case ConsoleKey.S:
@@ -52,14 +57,14 @@
                     break;
                 case ConsoleKey.A:
                 case ConsoleKey.LeftArrow:
-                    Game.Gameover("죽어걍");
+                    
                     // Move left
                     break;
                 case ConsoleKey.D:
                 case ConsoleKey.RightArrow:
                     {
                         Game.ChangeScene("room2");
-                        player.Hp++;
+                        Game.HpPlus();
                     }
                     // Move right
                     break;

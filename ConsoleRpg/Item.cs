@@ -15,7 +15,7 @@ namespace ConsoleRpg
 
         public Item(string name, int attack, int hp, int speed)
         {
-            
+            this.name = name;
             this.attack = attack;
             this.hp = hp;
             this.speed = speed;

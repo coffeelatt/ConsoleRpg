@@ -12,8 +12,27 @@ namespace ConsoleRpg.cut
         private ConsoleKey input;
         public override void Render()
         {
-            Console.WriteLine("You are in room 2.");
-            Console.WriteLine("Press any key to continue...");
+            /*막힌길 (1)
+             * 북 ,남(2)
+             * 북 동 남(3)
+             * 북 서 남(4)
+             * 북 동 서 남(5)
+             * 동 남  (6)
+             * 서 남  (7)
+             * 서 동 남(8)
+             */
+            Util.Print3D(8);
+            Game.PrintInfo();
+            if (Game.DeathCount >= 20)
+            {
+                Util.Printmap(4, 2);
+            }
+            Console.WriteLine();
+            if (Game.DeathCount >= 5)
+            {
+                Util.Print("You are in room 5.");
+            }
+            Console.WriteLine("Move Press key(→,←,↑,↓)");
         }
         public override void Input()
         {
@@ -30,7 +49,10 @@ namespace ConsoleRpg.cut
             {
                 case ConsoleKey.W:
                 case ConsoleKey.UpArrow:
-                    Game.ChangeScene("room10");
+                    {
+                        Game.ChangeScene("room10");
+                        Game.HpPlus();
+                    }
                     break;
                 case ConsoleKey.S:
                 case ConsoleKey.DownArrow:
@@ -38,7 +60,11 @@ namespace ConsoleRpg.cut
                     break;
                 case ConsoleKey.A:
                 case ConsoleKey.LeftArrow:
-                    Game.ChangeScene("room4");
+                    {
+                        Game.ChangeScene("room4");
+                        Game.HpPlus();
+                    }
+
                     // Move left
                     break;
                 case ConsoleKey.D:
