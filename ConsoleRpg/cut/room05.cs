@@ -9,6 +9,7 @@ namespace ConsoleRpg.cut
     public class room05 : Basecut
 
     {
+        public static Battle battle = new Battle();
         private ConsoleKey input;
         public override void Render()
         {
@@ -25,7 +26,7 @@ namespace ConsoleRpg.cut
             Game.PrintInfo();
             if (Game.DeathCount >= 20)
             {
-                Util.Printmap(4, 2);
+                Util.Printmap(4, 4);
             }
             Console.WriteLine();
             if (Game.DeathCount >= 5)
@@ -42,6 +43,7 @@ namespace ConsoleRpg.cut
         public override void Update()
         {
             //타이틀 컷신의 업데이트
+            Battle.StartBattle();
         }
         public override void Result()
         {

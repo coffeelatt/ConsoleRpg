@@ -10,11 +10,14 @@ namespace ConsoleRpg
     {
         private int hp;
         public int Hp { get; set; }
+
         private float attack;
         public float Attack { get; set; }
+
         private float speed;
         public float Speed { get; set; }
-        private int gold = 0;
+
+        private int gold;
         public int Gold
         {
             get { return gold; }

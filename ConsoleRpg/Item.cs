@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleRpg
 {
-    public class Item
+    public class Item       //시간 부족 구현못함
+                            // 클래스 사용없이 직통으로 함..
     {
         public string name;
         public int attack;

@@ -39,7 +39,7 @@ namespace ConsoleRpg
             }
             Monster monster = monsterFactory.Create(name);
             MonsterInfo(monster,reward);
-            
+            ConsoleKey input = Console.ReadKey(true).Key;
 
 
         }

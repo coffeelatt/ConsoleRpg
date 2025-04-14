@@ -8,7 +8,7 @@ namespace ConsoleRpg
 {
    public  class Inven
     {
-       // private List<Item> items;
+       // private List<Item> items; //아이템이없어서 인벤도없음..
 
         
 

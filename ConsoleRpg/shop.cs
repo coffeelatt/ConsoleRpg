@@ -13,9 +13,6 @@ namespace ConsoleRpg
         public Shop()
         {
             shopStack = new Stack<string>();
-            
-            
-
         }
         // 상점의 스택화
         public void useshop()

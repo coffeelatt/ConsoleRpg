@@ -41,6 +41,7 @@ namespace ConsoleRpg.cut
         }
         public override void Update()
         {
+
             //타이틀 컷신의 업데이트
         }
         public override void Result()

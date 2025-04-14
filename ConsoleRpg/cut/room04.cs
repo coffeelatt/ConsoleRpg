@@ -25,12 +25,12 @@ namespace ConsoleRpg.cut
             Game.PrintInfo();
             if (Game.DeathCount >= 20)
             {
-                Util.Printmap(4, 2);
+                Util.Printmap(4, 3);
             }
             Console.WriteLine();
             if (Game.DeathCount >= 5)
             {
-                Util.Print("You are in room 4.");
+                Util.Print("You are in room4.");
             }
             Console.WriteLine("Move Press key(→,←,↑,↓)");
         }

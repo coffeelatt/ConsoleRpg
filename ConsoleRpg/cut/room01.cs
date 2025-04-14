@@ -57,7 +57,7 @@
                     break;
                 case ConsoleKey.A:
                 case ConsoleKey.LeftArrow:
-                    
+                    Game.Gameover("You are dead.");
                     // Move left
                     break;
                 case ConsoleKey.D:
